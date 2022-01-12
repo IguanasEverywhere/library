@@ -1,8 +1,42 @@
-
 body {
-    background-color: blue;
+    background-color: #98DDCA;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color:#609fa1cf;
+    padding: 10px;
+}
+
+h1 {
+    margin: 0;
+    color:#282a2af0;
 }
 
 .card {
-    background-color: yellow;
+    background-color: #50a8c373;
+    width: 400px;
+    border-radius:5%;
+    text-align: center;
+    margin: 20px 20px 0 20px;
+    box-shadow: 5px 10px 10px #606864;
+}
+
+#cards-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style-type: none;
+    color:#282a2af0;
+    font-size: 2rem;
+    padding: 0;
+    margin: 10px 0;
+}
+
+li {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
