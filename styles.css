@@ -45,3 +45,26 @@ li {
     padding-bottom: 10px;
     color:#343838f0;
 }
+
+.buttonArea {
+    display: flex;
+    justify-content: center;
+}
+
+.addBookButton {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    align-items: center;
+    background-color: #2e9ca5;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    font-weight: 100; /*this isn't working unless I set it to something very high? */
+    border: 1px solid #415a5c;
+}
+
+.addBookButton:hover {
+    background-color: #1e666d;
+}
