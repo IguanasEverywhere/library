@@ -48,7 +48,8 @@ addBookButton.addEventListener("click", ()=> {
 });
 
 function openForm() {
-  document.getElementById("entry-form").style.display ="block";
+  document.getElementById("entry-form").style.display ="flex";
+
 }
 
 function closeForm() {
