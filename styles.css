@@ -78,21 +78,23 @@ li {
 #entry-form {
     display: none;
     width: 300px;
-    border: 2px solid black;
+    height: 200px;
+    border: 1px solid black;
     position: absolute; /*This makes it stay on top, but why? */
     /* z-index:1;  Why isn't this necessary? */
     flex-wrap: wrap;
+    background-color: #8bbddbd1;
 }
 
 #bookForm {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
 input {
     width: 100%;
     margin: 5px;
+    background-color: #ecefefd9;
 }
 
 .entryButtons {
@@ -101,3 +103,14 @@ input {
     justify-content: space-around;
 }
 
+#bookRead {
+    width:fit-content;
+    justify-self: flex-start;
+}
+
+label[for="bookRead"] {
+    font-size: 1rem; 
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 2px;
+}

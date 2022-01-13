@@ -73,5 +73,11 @@ submitBtn.addEventListener("click", () => {
 
 });
 
+const cancelButton = document.getElementById("cancelBtn");
+cancelButton.addEventListener("click", ()=> {
+  bookForm.reset();
+  closeForm();
+});
+
 
 console.log(myLibrary);
