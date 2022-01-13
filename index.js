@@ -1,10 +1,11 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, bookIndex) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.bookIndex = bookIndex;
 
   this.info = function () {
     return (this.title + this.author + this.pages + this.read);
@@ -52,7 +53,21 @@ function displayBooks(book) {
   deleteButton.textContent = "X";
   itemList.appendChild(deleteButton);
 
+  deleteButton.addEventListener("click", ()=> {
+    console.log(book.bookIndex);
+    
+    let filteredResults = myLibrary.filter((entries)=> {
+      return (entries.bookIndex!=book.bookIndex);
+    });
+    console.log(filteredResults);
+    filteredResults.forEach(result => {
+      displayBooks(result);
+    });
+  });
+
 }
+
+// let deleteButtons = document.getElementsByClassName("deleteBtn");
 
 const addBookButton = document.getElementById("addBookButton");
 addBookButton.addEventListener("click", ()=> {
@@ -77,7 +92,9 @@ submitBtn.addEventListener("click", () => {
   const addedPages = document.getElementById("bookPages").value;
   const addedRead = document.getElementById("bookRead").value;
 
-  let addedBook = new Book(addedTitle, addedAuthor, addedPages, addedRead);
+  let bookIndex = myLibrary.length;
+
+  let addedBook = new Book(addedTitle, addedAuthor, addedPages, addedRead, bookIndex);
   addBookToLibrary(addedBook);
 
   bookForm.reset();
@@ -91,5 +108,3 @@ cancelButton.addEventListener("click", ()=> {
   closeForm();
 });
 
-
-console.log(myLibrary);
