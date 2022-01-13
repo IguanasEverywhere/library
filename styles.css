@@ -105,6 +105,7 @@ input {
     justify-content: space-around;
 }
 
+
 #bookRead {
     width:fit-content;
     justify-self: flex-start;
@@ -115,4 +116,8 @@ label[for="bookRead"] {
     font-weight: 300;
     font-style: italic;
     margin-top: 2px;
+}
+
+#submitBtn:hover, #cancelBtn:hover {
+    background-color:#00ffc4d1;
 }

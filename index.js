@@ -43,7 +43,7 @@ function displayBooks(book) {
   if (checkItemReadValue.checked === true) {
     itemRead.textContent="Book is read";
   } else {
-    itemRead.textContent = "book is not read";
+    itemRead.textContent = "Book is not read";
   }
   
   itemList.appendChild(itemRead);
