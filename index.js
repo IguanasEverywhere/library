@@ -27,6 +27,7 @@ function displayBooks(book) {
 
   let itemTitle = document.createElement("li");
   itemTitle.textContent=book.title;
+  itemTitle.style.fontSize="3rem";
   itemList.appendChild(itemTitle);
 
   let itemAuthor = document.createElement("li");
@@ -34,11 +35,17 @@ function displayBooks(book) {
   itemList.appendChild(itemAuthor);
 
   let itemPages = document.createElement("li");
-  itemPages.textContent=book.pages;
+  itemPages.textContent=book.pages + " pages";
   itemList.appendChild(itemPages);  
 
   let itemRead = document.createElement("li");
-  itemRead.textContent=book.read;
+  let checkItemReadValue = document.getElementById("bookRead");
+  if (checkItemReadValue.checked === true) {
+    itemRead.textContent="Book is read";
+  } else {
+    itemRead.textContent = "book is not read";
+  }
+  
   itemList.appendChild(itemRead);
 }
 
