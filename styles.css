@@ -24,6 +24,14 @@ h1 {
     text-align: center;
     margin: 20px 20px 0 20px;
     box-shadow: 5px 10px 10px #606864;
+
+    animation-name: fadeCard;
+    animation-duration: 2s;
+}
+
+@keyframes fadeCard {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 #cards-body {
@@ -84,7 +92,16 @@ li {
     /* z-index:1;  Why isn't this necessary? */
     flex-wrap: wrap;
     background-color: #8bbddbd1;
+    border-radius: 8px;
+
+    animation-name: fadeAppear;
+    animation-duration: 1s;
 }
+
+  @keyframes fadeAppear {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
 
 #bookForm {
     display: flex;
