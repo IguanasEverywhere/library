@@ -51,7 +51,7 @@ li {
     justify-content: center;
 }
 
-.addBookButton {
+#addBookButton {
     display: flex;
     justify-content: center;
     margin: 20px 0;
@@ -66,6 +66,10 @@ li {
     border: 1px solid #415a5c;
 }
 
-.addBookButton:hover {
+#addBookButton:hover {
     background-color: #1e666d;
+}
+
+#entry-form {
+    display: none;
 }

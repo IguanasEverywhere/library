@@ -42,6 +42,19 @@ function displayBooks(book) {
   itemList.appendChild(itemRead);
 }
 
+const addBookButton = document.getElementById("addBookButton");
+addBookButton.addEventListener("click", ()=> {
+  openForm();
+});
+
+function openForm() {
+  document.getElementById("entry-form").style.display ="block";
+}
+
+function closeForm() {
+  document.getElementById("entry-form").style.display ="none";
+}
+
 const bookForm = document.getElementById("bookForm");
 
 const submitBtn = document.getElementById("submitBtn");
@@ -55,6 +68,7 @@ submitBtn.addEventListener("click", () => {
   addBookToLibrary(addedBook);
 
   bookForm.reset();
+  closeForm();
 
 });
 
