@@ -138,3 +138,8 @@ label[for="bookRead"] {
 #submitBtn:hover, #cancelBtn:hover {
     background-color:#00ffc4d1;
 }
+
+.deleteBtn {
+    background-color: yellow;
+    border-radius: 100%;
+}

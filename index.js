@@ -45,8 +45,13 @@ function displayBooks(book) {
   } else {
     itemRead.textContent = "Book is not read";
   }
-  
   itemList.appendChild(itemRead);
+
+  let deleteButton = document.createElement("button");
+  deleteButton.classList.add("deleteBtn");
+  deleteButton.textContent = "X";
+  itemList.appendChild(deleteButton);
+
 }
 
 const addBookButton = document.getElementById("addBookButton");
