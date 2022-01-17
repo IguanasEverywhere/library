@@ -45,9 +45,17 @@ function displayBooks(book) {
   let itemRead = document.createElement("li");
   let checkItemReadValue = document.getElementById("bookRead");
   if (checkItemReadValue.checked === true) {
-    itemRead.textContent="Book is read";
-  } else {
-    itemRead.textContent = "Book is not read";
+    book.read = true;
+  } else if (checkItemReadValue.checked === false){
+    book.read = false;
+  }
+
+  if (book.read === true) {
+    itemRead.textContent = "Book is read!";
+    itemRead.style.color = "#0a8f0a";
+  } else if (book.read === false) {
+    itemRead.textContent = "Book is NOT read";
+    itemRead.style.color = "#c95656";
   }
   itemList.appendChild(itemRead);
 
@@ -80,10 +88,24 @@ function displayBooks(book) {
     });
   });
 
+  // Change read status button /////////////////
+
   let changeReadStatus = document.createElement("li");
   changeReadStatus.classList.add("changeReadStatus");
   changeReadStatus.textContent = "Click here to change the read status";
   itemList.appendChild(changeReadStatus);
+
+  changeReadStatus.addEventListener("click", ()=> {
+    if (book.read === true) {
+      book.read = false;
+      itemRead.textContent = "Book is NOT read!";
+      itemRead.style.color = "#c95656";
+    } else {
+      book.read = true;
+      itemRead.textContent = "Book is Read!"
+      itemRead.style.color = "#0a8f0a";
+    }
+  });
 
 }
 
