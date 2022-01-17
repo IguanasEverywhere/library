@@ -46,7 +46,7 @@ ul {
     color:#282a2af0;
     font-size: 2rem;
     padding: 0;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
 }
 
 li {
@@ -143,4 +143,15 @@ label[for="bookRead"] {
 
 .deleteBtn:hover {
     background-color:#1e666d;
+}
+
+.changeReadStatus {
+    background-color:#2f9ca5;
+    font-size: 1rem;
+    border-radius: 0 0 5% 5%;
+    margin-top: 10px;
+}
+
+.changeReadStatus:hover {
+    background-color: #5da0a7;
 }

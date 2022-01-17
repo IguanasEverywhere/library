@@ -62,9 +62,7 @@ function displayBooks(book) {
 
 
   deleteButton.addEventListener("click", ()=> {
-    console.log(book.bookIndex);
-
-
+    
     let currentCards = Array.from(document.getElementsByClassName("card"));
     currentCards.forEach(card => {
       card.remove();
@@ -81,6 +79,11 @@ function displayBooks(book) {
       displayBooks(result);
     });
   });
+
+  let changeReadStatus = document.createElement("li");
+  changeReadStatus.classList.add("changeReadStatus");
+  changeReadStatus.textContent = "Click here to change the read status";
+  itemList.appendChild(changeReadStatus);
 
 }
 
