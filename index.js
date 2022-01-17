@@ -1,5 +1,8 @@
 let myLibrary = [];
 
+
+// Book Constructor ///////////////////////////////////////////////////////
+
 function Book(title, author, pages, read, bookIndex) {
   this.title = title;
   this.author = author;
@@ -48,13 +51,19 @@ function displayBooks(book) {
   }
   itemList.appendChild(itemRead);
 
+
+
+  // Handle item deletion //////////////////////////////////////////////
+
   let deleteButton = document.createElement("button");
   deleteButton.classList.add("deleteBtn");
   deleteButton.textContent = "X";
   itemList.appendChild(deleteButton);
 
+
   deleteButton.addEventListener("click", ()=> {
     console.log(book.bookIndex);
+
 
     let currentCards = Array.from(document.getElementsByClassName("card"));
     currentCards.forEach(card => {
@@ -64,16 +73,16 @@ function displayBooks(book) {
     let filteredResults = myLibrary.filter((entries)=> {
       return (entries.bookIndex!=book.bookIndex);
     });
-    console.log(filteredResults);
+
     myLibrary = filteredResults;
+    console.log(myLibrary);
     filteredResults.forEach(result => {
+      result.bookIndex = myLibrary.indexOf(result);
       displayBooks(result);
     });
   });
 
 }
-
-// let deleteButtons = document.getElementsByClassName("deleteBtn");
 
 const addBookButton = document.getElementById("addBookButton");
 addBookButton.addEventListener("click", ()=> {
