@@ -55,11 +55,17 @@ function displayBooks(book) {
 
   deleteButton.addEventListener("click", ()=> {
     console.log(book.bookIndex);
+
+    let currentCards = Array.from(document.getElementsByClassName("card"));
+    currentCards.forEach(card => {
+      card.remove();
+    });
     
     let filteredResults = myLibrary.filter((entries)=> {
       return (entries.bookIndex!=book.bookIndex);
     });
     console.log(filteredResults);
+    myLibrary = filteredResults;
     filteredResults.forEach(result => {
       displayBooks(result);
     });
