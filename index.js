@@ -98,10 +98,12 @@ function displayBooks(book) {
   changeReadStatus.addEventListener("click", ()=> {
     if (book.read === true) {
       book.read = false;
+      checkItemReadValue.checked = false;
       itemRead.textContent = "Book is NOT read!";
       itemRead.style.color = "#c95656";
     } else {
       book.read = true;
+      checkItemReadValue.checked = true;
       itemRead.textContent = "Book is Read!"
       itemRead.style.color = "#0a8f0a";
     }
