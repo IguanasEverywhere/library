@@ -1,6 +1,5 @@
 let myLibrary = [];
 
-
 // Book Constructor ///////////////////////////////////////////////////////
 
 function Book(title, author, pages, read, bookIndex) {
@@ -128,6 +127,7 @@ function closeForm() {
 const bookForm = document.getElementById("bookForm");
 
 const submitBtn = document.getElementById("submitBtn");
+submitBtn.disabled = true;
 submitBtn.addEventListener("click", () => {
   const addedTitle = document.getElementById("bookTitle").value;
   const addedAuthor = document.getElementById("bookAuthor").value;
@@ -140,6 +140,7 @@ submitBtn.addEventListener("click", () => {
   addBookToLibrary(addedBook);
 
   bookForm.reset();
+  submitBtn.disabled = true;
   closeForm();
 
 });
@@ -150,3 +151,18 @@ cancelButton.addEventListener("click", ()=> {
   closeForm();
 });
 
+// Input validation--making sure pages field is actually a number
+
+let regPage = /[0-9]/g;
+const inputPages = document.getElementById("bookPages");
+
+inputPages.addEventListener('keyup', (e)=> {
+    validateInput(e.target, regPage);
+  });
+
+function validateInput(inputField, regex) {
+  if ((regex.test(inputField.value))) {
+    submitBtn.disabled = false;
+  }
+
+}
